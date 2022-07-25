@@ -1,0 +1,17 @@
+{
+  "name": "profoilo-website",
+  "version": "1.0.0",
+  "description": "My profoilo website will include a blogging table and gernral insight on what i'm learning projects and so on the website will be built with the idea that's alaways gonna be updated depending on what I want to do weather it's simple blog updates about my progress or all-around updeates to my website (it will be run with mongoDB on the backend as a data base and express on the server logic side",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohmmad-Baqir",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.6"
+  }
+}
