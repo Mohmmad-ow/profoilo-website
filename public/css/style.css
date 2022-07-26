@@ -1,0 +1,70 @@
+/* Tags style */
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    padding:  0 20px;
+    display: inline-block;
+}
+
+.nav div {
+    display: inline-block;
+}
+
+li a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+/* navbar section */
+
+
+.navbar {
+    position: relative;
+    height: 400px;
+    background-color: #3ab0ff;
+    padding: 0 150px;
+}
+.nav {
+    padding-bottom: 100px;
+}
+.nav-title {
+    font-family: 'PT Serif', serif;
+    font-size: large;
+    float: left;
+}
+.nav-sections {
+    font-family: 'MuseoModerno', cursive;
+
+    float: right;
+}
+.navbar-list {
+    padding-top: 10px;
+    display: inline-block;
+}
+.my-fa {
+    font-size: 2rem;
+    display: inline-block;
+    padding-right: 5px;
+    
+}
+.title-header {
+    font-size: 2rem;
+    display: inline-block;
+}
+
+/* speech-bubble section */
+
+#speech-bubble-section {
+    display: block;
+}
+.stick-man-div img {
+    width: 300px;
+    float: left;
+}
+#speech-bubble-section div {
+    display: inline-block;
+}

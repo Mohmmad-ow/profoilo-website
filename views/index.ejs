@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MB.J Tech</title>
+    <!-- Linked style sheet -->
+    <link rel="stylesheet" href="/css/style.css" />
     <!-- Bootstrap -->
-</head>
-<body>
-    <style>
-        nav {
-            position: relative;
-            height: 400px;
-            background-color: #3ab0ff;
-            padding: 0 50px;
-        }
-        div {
-            display: inline-block;
-        }
-        .nav-title {
-            font-size: large;
-            float: left;
-        }
-        .nav-sections {
-            float: right;
-        }
-        ul {
-            display: inline-block;
-        }
-        li {
-            padding:  0 20px;
-            display: inline-block;
-        }
-    </style>
-    <nav>
-        <div class="nav-title"><h2>MB.J Tech</h2></div>
-        <div class="nav-sections">
-            <ul>
-                <li>Projects</li>
-                <li>Skills</li>
-                <li>Contact Me</li>
-            </ul>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200&family=PT+Serif:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/c31ef39b02.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav">
+        <div class="nav-title">
+          <i class="my-fa fa-solid fa-record-vinyl"></i>
+          <h1 class="title-header">Baqir</h1>
         </div>
+        <div class="nav-sections">
+          <ul class="navbar-list">
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Contact Me</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="speech-bubble-section">
+        <div class="stick-man-div">
+          <img src="/images/stick-figure.png" alt="stick-figure" />
+        </div>
+        <div class="speech-bubble">
+            <img src="/images/speak-bubble.png" alt="">
+        </div>
+      </div>
     </nav>
-</body>
+  </body>
 </html>
