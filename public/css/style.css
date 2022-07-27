@@ -2,7 +2,8 @@
 body{
     margin: 0px;
     padding: 0px;
-    background-color: #3ab0ff;
+    background-color: #FEFBF6;
+    
 }
 
 li {
@@ -23,10 +24,8 @@ li a {
 /* navbar section */
 
 
-.navbar {
-    position: relative;
-    height: 400px;
-    
+.navbar {    
+    background-color: #3ab0ff;
     padding: 0 150px;
 }
 .nav {
@@ -80,7 +79,7 @@ li a {
     margin-bottom:13% ;
     width: 75%;
 }
-/* Testing text in img start */
+/*text in img */
 .container {
     position: relative;
     margin-left: -10%;
@@ -104,4 +103,38 @@ li a {
     left: 49%;
     transform: translate(-43%, -50%);
   }
-  /* test end */
+/* ____________________- */
+
+/* Chat Button section */
+
+.chat-button-div {
+    padding: 150px 0;
+    display: block;
+    text-align: center;
+
+}
+
+.chat-button {
+    color: #2C3333;
+    background-color: #3ab0ff;
+    border-radius: 45px;
+    font-size: 2.5rem;
+    /* border: 1px solid black; */
+    text-decoration: none;
+    padding: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.chat-button:hover {
+    color: #3ab0ff;
+    background-color: #000;
+    box-shadow: 1px;
+    border-radius: 45px;
+    font-size: 2.5rem;
+    border: 2px solid #358fca;
+    text-decoration: none;
+    padding: 18px;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.7;
+
+}
