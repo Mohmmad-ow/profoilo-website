@@ -176,45 +176,96 @@ hr {
     padding: 6% 7% 0;
 }
 
+.what-i-study {
+    padding-bottom: 200px;
+
+}
+
 .greenboard {
     margin-top:40px ;
     transform: rotate(-10deg);
     margin-left: auto;
     margin-right: auto;
-    height: 400px;
+    height: 350px;
     width: 80%;
     background-color: #36ae7c;
-    overflow-x:hidden;
 }
 
-.row {
+
+.yellowboard {
+    margin-top:40px ;
+    transform: rotate(-10deg);
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    width: 80%;
+    background-color: #ffb562;
+}
+
+.wis-row {
+    position: absolute;
+    top: -20px;
     padding: 65px 55px 0;
     transform: rotate(10deg);
+    width: 100%;
+    height: 100%;
+    
 }
-.row div {
+
+.wid-row {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    padding: 65px 55px 0;
+    transform: rotate(10deg);
+    width: 100%;
+    height: 100%;
+}
+.wis-row div {
     display: inline-block;
 }
 
-.wis-txt {
+.wid-row div {
+    display: inline-block;
+}
+
+.wis-div-txt {
+    display: block;
+    margin-bottom: 50px;
+    margin-left: 90px;
     width: 55%;
-    background-color: red;
     height: 100%;
 }
 .wis-img {
     float: left;
     width: 35%;
-    background-color: blue;
     height: 100%;
 }
 
-.wid-txt {
+.wid-div-txt {
+    display: block;
+    margin-bottom: 50px;
+    margin-left: 90px;
     width: 55%;
-    background-color: red;
     height: 100%;
 }
 .wid-img {
     float: right;
     width: 35%;
-    background-color: blue;
     height: 100%;
+}
+
+.board-header {
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    color: #003865;
+    font-size: 2.2rem;
+}
+
+.board-p {
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    color: #003865;
+    font-size: 1.2rem;
+    padding-right: 20px;    
 }
