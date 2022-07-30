@@ -169,3 +169,52 @@ hr {
     color: #003865;
     font-size: 2.5rem;
 }
+
+/* What I do section */
+
+#what-i-do {
+    padding: 6% 7% 0;
+}
+
+.greenboard {
+    margin-top:40px ;
+    transform: rotate(-10deg);
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    width: 80%;
+    background-color: #36ae7c;
+    overflow-x:hidden;
+}
+
+.row {
+    padding: 65px 55px 0;
+    transform: rotate(10deg);
+}
+.row div {
+    display: inline-block;
+}
+
+.wis-txt {
+    width: 55%;
+    background-color: red;
+    height: 100%;
+}
+.wis-img {
+    float: left;
+    width: 35%;
+    background-color: blue;
+    height: 100%;
+}
+
+.wid-txt {
+    width: 55%;
+    background-color: red;
+    height: 100%;
+}
+.wid-img {
+    float: right;
+    width: 35%;
+    background-color: blue;
+    height: 100%;
+}
