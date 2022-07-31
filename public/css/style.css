@@ -269,3 +269,72 @@ hr {
     font-size: 1.2rem;
     padding-right: 20px;    
 }
+
+/* Skills section */
+#skills {
+    padding-top: 300px;
+    padding-bottom: 300px;
+}
+
+.skill-div {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #4700d8;
+    width: 70%;
+    height: 600px;
+    transform: skewX(-25deg);
+}
+.skill-div .vertical {
+    transform: skewX(25deg);
+    display: block;
+}
+
+.vertical {
+    border-left: 6px solid #3ab0ff;
+    height: 80%;
+    position:absolute;
+    margin-left: 55%;
+}
+.skill-div-title {
+    text-align: center;
+}
+
+.skill-header {
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    color: #7DCE13;
+    font-size: 2.2rem;
+}
+
+.frontend-skills-div {
+    transform: skewX(25deg);
+    margin-left: 50px;
+    text-align: center;
+    width: 40%;
+    float: left;
+    
+}
+
+.frontend-skills-div li {
+    text-align: left;
+    display: block;
+}
+
+.frontend-element {
+    width: 100%;
+}
+
+.frontend-header {
+    margin: 0;
+    margin-left: 150px;
+    color: #FFC23C;
+    font-size: 4rem;
+    font-family: 'Square Peg', cursive;
+}
+.frontend-element div div, .frontend-element p {
+    display: inline-block;
+
+}
+.frontend-element div {
+    display: inline-block;
+}
