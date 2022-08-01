@@ -308,10 +308,10 @@ hr {
 
 .frontend-skills-div {
     transform: skewX(25deg);
-    margin-left: 50px;
     text-align: center;
     width: 40%;
     float: left;
+    margin-top: -60px;
     
 }
 
@@ -320,9 +320,6 @@ hr {
     display: block;
 }
 
-.frontend-element {
-    width: 100%;
-}
 
 .frontend-header {
     margin: 0;
@@ -337,4 +334,39 @@ hr {
 }
 .frontend-element div {
     display: inline-block;
+}
+
+.frontend-element {
+    width: 100%;
+    position: relative;
+    padding: 5px 0;
+}
+
+.frontend-element-per {
+    width: 50%;
+    height: 4px;
+    background-color: #fff;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.frontend-element-per div {
+    width: 85%;
+    height: 100%;
+    background-color: #3ab0ff;
+    margin-bottom: 20px;
+}
+
+.frontend-element p {
+    padding-top: 10%;
+    float: right;
+    color: #3ab0ff;
+}
+.js-img {
+    margin-left: 12px;
+}
+.js-per {
+    margin-left: 10px;
 }
