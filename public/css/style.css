@@ -271,6 +271,7 @@ hr {
 }
 
 /* Skills section */
+
 #skills {
     padding-top: 300px;
     padding-bottom: 300px;
@@ -306,10 +307,13 @@ hr {
     font-size: 2.2rem;
 }
 
+/* Front-End section */
+
 .frontend-skills-div {
+    margin-left: 41px;
     transform: skewX(25deg);
     text-align: center;
-    width: 40%;
+    width: 43%;
     float: left;
     margin-top: -60px;
     
@@ -323,7 +327,7 @@ hr {
 
 .frontend-header {
     margin: 0;
-    margin-left: 150px;
+    margin-left: 92px;
     color: #FFC23C;
     font-size: 4rem;
     font-family: 'Square Peg', cursive;
@@ -339,7 +343,7 @@ hr {
 .frontend-element {
     width: 100%;
     position: relative;
-    padding: 5px 0;
+    padding: 7px 0;
 }
 
 .frontend-element-per {
@@ -360,13 +364,51 @@ hr {
 }
 
 .frontend-element p {
-    padding-top: 10%;
+    padding-top: 6%;
     float: right;
     color: #3ab0ff;
 }
 .js-img {
-    margin-left: 12px;
+    margin-left: 8px;
 }
 .js-per {
     margin-left: 10px;
+}
+p.js-p {
+    padding-top: 4%;
+}
+
+.bootstrap-img {
+    margin-left: 8px;
+}
+
+.bootstrap-per {
+    margin-left: 12px;
+}
+
+p.bootstrap-p {
+    padding-top: 4%;
+}
+
+/* Backend Section */
+
+.backend-skills-div {
+    margin-right: 90px;
+    transform: skewX(25deg);
+    text-align: center;
+    width: 43%;
+    float: right;
+    margin-top: -55px;
+    background-color: #000;
+    height: 80%;
+    opacity: 0.5;
+  }
+
+.backend-skills-div li {
+    text-align: left;
+    display: block;
+}
+
+.frontend-element div {
+    display: inline-block;
 }
