@@ -60,6 +60,8 @@ li a {
 #speech-bubble-section {
     text-align: center;
     display: block;
+
+    position: relative;
 }
 #speech-bubble-section div {
     display: inline-block;
@@ -70,6 +72,16 @@ li a {
 }
 .sbs-img-2 {
     width: 64%;
+    height: 100%;
+    background-color: black;
+    opacity: .3;
+    position: relative;
+    bottom: 50%;
+}
+
+.speech-bubble {
+    width: 100%;
+    
 }
 
 .sbs-img-1 img {
@@ -79,30 +91,7 @@ li a {
     margin-bottom:13% ;
     width: 75%;
 }
-/*text in img */
-.container {
-    position: relative;
-    margin-left: -10%;
-}
-  /* Centered text */
-  .centered-top {
-    color: #2C3333;
-    font-size: 3.5rem;
-    font-family: 'League Spartan', sans-serif;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-43%, -50%);
-  }
-  .centered-bottom {
-    color: #1336aa;
-    font-size: 2.5rem;
-    font-family: 'League Spartan', sans-serif;
-    position: absolute;
-    top: 37%;
-    left: 49%;
-    transform: translate(-43%, -50%);
-  }
+
 /* ____________________- */
 
 /* Chat Button section */
