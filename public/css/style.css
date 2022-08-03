@@ -477,7 +477,7 @@ p.be-p-3 {
 }
 
 .footer-elements {
-    padding: 2% 25% 4%;
+    padding: 2% 25% 1.4%;
     text-align: center;
 }
 .footer-header {
@@ -495,4 +495,15 @@ p.be-p-3 {
 
 .fa-brands:hover {
     opacity: 0.5;
+}
+
+ul.links-list li a, li p {
+    display: inline-block;
+}
+ul.links-list li a:hover {
+    opacity: 0.5;
+}
+.copyright {
+    opacity: .5;
+    color: #E7F6F2;
 }
