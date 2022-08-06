@@ -58,9 +58,7 @@ li a {
 /* speech-bubble section */
 
 #speech-bubble-section {
-    text-align: center;
-    display: block;
-
+    /* text-align: center; */
     position: relative;
 }
 #speech-bubble-section div {
@@ -72,25 +70,52 @@ li a {
 }
 .sbs-img-2 {
     width: 64%;
-    height: 100%;
-    background-color: black;
-    opacity: .3;
-    position: relative;
-    bottom: 50%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-80%);
+    
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-right: 120px solid #ffb562;
+    border-bottom: 60px solid transparent;
+    transform: rotate(-23deg);
+    position: absolute;
+    right: 92.5%;
 }
 
 .speech-bubble {
     width: 100%;
+    height: 100%;
+    background-color: #ffb562;
+    text-align: center;
+    transform:  rotate(12deg);
     
 }
 
 .sbs-img-1 img {
     width: 75%;
 }
-.sbs-img-2 img {
-    margin-bottom:13% ;
-    width: 75%;
+
+
+.SB-text {
+    transform:  rotate(-12deg);
+    
 }
+
+.SB-text-1 {
+    font-size: 2.4rem;
+    font-family: 'League Spartan', sans-serif;
+}
+.SB-text-2 {
+    font-size: 2.4rem;
+    font-family: 'MuseoModerno', cursive;
+}
+
 
 /* ____________________- */
 
