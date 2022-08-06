@@ -160,6 +160,7 @@ hr {
     width: 32%;
     height: 6px;
     background-color: #3ab0ff;
+    border: none;
 }
 
 .hr {

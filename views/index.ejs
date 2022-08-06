@@ -1,229 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MB.J Tech</title>
-    <!-- Linked style sheet -->
-    <link rel="stylesheet" href="/css/style.css" />
-    <!-- Bootstrap -->
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BhuTuka+Expanded+One&family=League+Spartan&family=MuseoModerno:wght@200&family=Open+Sans&family=PT+Serif&family=Roboto:wght@300&family=Share+Tech+Mono&family=Square+Peg&display=swap"
-      rel="stylesheet"
-    />
-    <!-- font awesome -->
-    <script
-      src="https://kit.fontawesome.com/c31ef39b02.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <nav class="navbar">
-      <!-- Navbar section -->
-      <div class="nav">
-        <div class="nav-title">
-          <i class="my-fa fa-solid fa-record-vinyl"></i>
-          <h1 class="title-header">Baqir</h1>
+<%- include('partials/navbar') %>
+<!-- Speech bubble section -->
+<div id="speech-bubble-section">
+    <div class="sbs-img-1">
+      <img src="/images/stick-figure.png" alt="stick-figure" />
+    </div>
+    <div class="sbs-img-2">
+      <div class="triangle"></div>
+     <div class="speech-bubble">
+      <div class="SB-text">
+        <h1 class="SB-text-1">Hi I'm Mohmmad</h1>
+      <h1 class="SB-text-2">A Fullstack Web Developer</h1>
+      </div>
+    </div>
+    </div>
+      </div>
+</nav>
+<!-- Chat Button -->
+<div class="chat-button-div">
+  <a href="#" class="chat-button"> Wanna Chat! </a>
+</div>
+<div class="hr">
+  <hr class="hr-1" />
+  <h1 class="hr-txt">What I'm I doing</h1>
+  <hr class="hr-2" />
+</div>
+<!-- What I do section -->
+<section id="what-i-do">
+  <div class="what-i-study">
+    <div class="yellowboard">
+      <div class="wis-row">
+        <div class="wis-img">
+          <img src="/images/what-i-study-rs.png" alt="" />
         </div>
-        <div class="nav-sections">
-          <ul class="navbar-list">
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Contact Me</a></li>
-          </ul>
+        <div class="wis-div-txt">
+          <h1 class="board-header">Study Computer science</h1>
+          <p class="board-p">
+            I'm studying with the idea of attending The University of
+            Technology in Bagdad to Ultimately become a Software Architect
+          </p>
         </div>
       </div>
-      <!-- Speech bubble section -->
-      <div id="speech-bubble-section">
-        <div class="sbs-img-1">
-          <img src="/images/stick-figure.png" alt="stick-figure" />
-        </div>
-        <div class="sbs-img-2">
-          <div class="triangle"></div>
-         <div class="speech-bubble">
-          <div class="SB-text">
-            <h1 class="SB-text-1">Hi I'm Mohmmad</h1>
-          <h1 class="SB-text-2">A Fullstack Web Developer</h1>
-          </div>
-        </div>
-        </div>
-          </div>
-    </nav>
-    <!-- Chat Button -->
-    <div class="chat-button-div">
-      <a href="#" class="chat-button"> Wanna Chat! </a>
     </div>
-    <div class="hr">
-      <hr class="hr-1" />
-      <h1 class="hr-txt">What I'm I doing</h1>
-      <hr class="hr-2" />
-    </div>
-    <!-- What I do section -->
-    <section id="what-i-do">
-      <div class="what-i-study">
-        <div class="yellowboard">
-          <div class="wis-row">
-            <div class="wis-img">
-              <img src="/images/what-i-study-rs.png" alt="" />
-            </div>
-            <div class="wis-div-txt">
-              <h1 class="board-header">Study Computer science</h1>
-              <p class="board-p">
-                I'm studying with the idea of attending The University of
-                Technology in Bagdad to Ultimately become a Software Architect
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+  </div>
 
-      <div class="what-i-do">
-        <div class="greenboard">
-          <div class="wid-row">
-            <div class="wid-div-txt">
-              <h1 class="board-header">Develop WebSites</h1>
-              <p class="board-p">
-                I am learning to become a fullstack web developer mostly
-                Front-end development with HTML, CSS, JavaScript, Bootstrap,
-                React.Js! and Back-end Through Python, JS, Node.Js!
-              </p>
-            </div>
-            <div class="wid-img">
-              <img src="/images/web-development-rs.png" alt="" />
-            </div>
-          </div>
+  <div class="what-i-do">
+    <div class="greenboard">
+      <div class="wid-row">
+        <div class="wid-div-txt">
+          <h1 class="board-header">Develop WebSites</h1>
+          <p class="board-p">
+            I am learning to become a fullstack web developer mostly
+            Front-end development with HTML, CSS, JavaScript, Bootstrap,
+            React.Js! and Back-end Through Python, JS, Node.Js!
+          </p>
+        </div>
+        <div class="wid-img">
+          <img src="/images/web-development-rs.png" alt="" />
         </div>
       </div>
-    </section>
-    <!-- Skill section -->
-    <section id="skills">
-      <div class="skill-div">
-        <div class="skill-div-title">
-          <h1 class="skill-header">Web DEVELOPMENT</h1>
-        </div>
-        <div class="vertical"></div>
-        <!-- Frontend subsection -->
-        <div class="frontend-skills-div">
-          <h1 class="frontend-header">Front-end</h1>
-          <ul>
-            <li>
-              <div class="frontend-element">
-                <div class="frontend-element-img">
-                  <img src="/images/html.png" alt="">
-                </div>
-                <div class="frontend-element-per">
-                  <div></div>
-                </div>
-                <p>70%</p>
-              </div>
-            </li>
-            <li>
-              <div class="frontend-element">
-                <div class="frontend-element-img">
-                  <img src="/images/css.png" alt="">
-                </div>
-                <div class="frontend-element-per">
-                  <div></div>
-                </div>
-                <p>70%</p>
-              </div>
-            </li>
-            <li>
-              <div class="frontend-element">
-                <div class="frontend-element-img js-img">
-                  <img src="/images/javascript.png" alt="">
-                </div>
-                <div class="frontend-element-per js-per">
-                  <div></div>
-                </div>
-                <p class="js-p">70%</p>
-              </div>
-            </li>
-            <li>
-              <div class="frontend-element">
-                <div class="frontend-element-img bootstrap-img">
-                  <img src="/images/bootstrap.png" alt="">
-                </div>
-                <div class="frontend-element-per bootstrap-per">
-                  <div></div>
-                </div>
-                <p class="bootstrap-p">70%</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- Backend subsection -->
-        <div class="backend-skills-div">
-          <h1 class="frontend-header">Back-end</h1>
-          <ul>
-            <li class="be-element-1">
-              <div class="frontend-element">
-                <div class="frontend-element-img be-img-1">
-                  <img src="/images/django-rs.png" alt="">
-                </div>
-                <div class="frontend-element-per">
-                  <div></div>
-                </div>
-                <p class="be-p-1">70%</p>
-              </div>
-            </li>
-            <li class="be-element-2">
-              <div class="frontend-element">
-                <div class="frontend-element-img be-img-2">
-                  <img src="/images/node-rs.png" alt="">
-                </div>
-                <div class="frontend-element-per">
-                  <div></div>
-                </div>
-                <p class="be-p-2">70%</p>
-              </div>
-            </li>
-            <li class="be-element-3">
-              <div class="frontend-element">
-                <div class="frontend-element-img js-img be-img-3">
-                  <img src="/images/reactjs-rs.png" alt="">
-                </div>
-                <div class="frontend-element-per js-per">
-                  <div></div>
-                </div>
-                <p class="js-p be-p-3">70%</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </body>
-  <!-- Footer section -->
-  <footer id="footer-section">
-    <div class="footer-elements">
-      <h1 class="footer-header">Like what you see? give me a call!</h1>
-      <!-- <ul>
-        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-      </ul> -->
-      <ul>
-        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-      </ul>
-      <ul class="links-list">
-        <li><a href="#">Home</a></li>
-        <li><p>|</p></li>
-        <li><a href="#">Projects</a></li>
-        <li><p>|</p></li>
-        <li><a href="#">Works</a></li>
-        <li><p>|</p></li>
-        <li><a href="#">Contact me</a></li>
-      </ul>
-      <p class="copyright">©2022 MB al-J & tech. all rights reserved. Hosted by Heroku</p>
     </div>
-  </footer>
-</html>
+  </div>
+</section>
+<!-- Skill section -->
+<section id="skills">
+  <div class="skill-div">
+    <div class="skill-div-title">
+      <h1 class="skill-header">Web DEVELOPMENT</h1>
+    </div>
+    <div class="vertical"></div>
+    <!-- Frontend subsection -->
+    <div class="frontend-skills-div">
+      <h1 class="frontend-header">Front-end</h1>
+      <ul>
+        <li>
+          <div class="frontend-element">
+            <div class="frontend-element-img">
+              <img src="/images/html.png" alt="">
+            </div>
+            <div class="frontend-element-per">
+              <div></div>
+            </div>
+            <p>70%</p>
+          </div>
+        </li>
+        <li>
+          <div class="frontend-element">
+            <div class="frontend-element-img">
+              <img src="/images/css.png" alt="">
+            </div>
+            <div class="frontend-element-per">
+              <div></div>
+            </div>
+            <p>70%</p>
+          </div>
+        </li>
+        <li>
+          <div class="frontend-element">
+            <div class="frontend-element-img js-img">
+              <img src="/images/javascript.png" alt="">
+            </div>
+            <div class="frontend-element-per js-per">
+              <div></div>
+            </div>
+            <p class="js-p">70%</p>
+          </div>
+        </li>
+        <li>
+          <div class="frontend-element">
+            <div class="frontend-element-img bootstrap-img">
+              <img src="/images/bootstrap.png" alt="">
+            </div>
+            <div class="frontend-element-per bootstrap-per">
+              <div></div>
+            </div>
+            <p class="bootstrap-p">70%</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Backend subsection -->
+    <div class="backend-skills-div">
+      <h1 class="frontend-header">Back-end</h1>
+      <ul>
+        <li class="be-element-1">
+          <div class="frontend-element">
+            <div class="frontend-element-img be-img-1">
+              <img src="/images/django-rs.png" alt="">
+            </div>
+            <div class="frontend-element-per">
+              <div></div>
+            </div>
+            <p class="be-p-1">70%</p>
+          </div>
+        </li>
+        <li class="be-element-2">
+          <div class="frontend-element">
+            <div class="frontend-element-img be-img-2">
+              <img src="/images/node-rs.png" alt="">
+            </div>
+            <div class="frontend-element-per">
+              <div></div>
+            </div>
+            <p class="be-p-2">70%</p>
+          </div>
+        </li>
+        <li class="be-element-3">
+          <div class="frontend-element">
+            <div class="frontend-element-img js-img be-img-3">
+              <img src="/images/reactjs-rs.png" alt="">
+            </div>
+            <div class="frontend-element-per js-per">
+              <div></div>
+            </div>
+            <p class="js-p be-p-3">70%</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>
