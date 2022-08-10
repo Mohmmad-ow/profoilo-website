@@ -1,0 +1,21 @@
+<%- include('partials/navbar') %>
+</nav>
+
+<h1>All My Projects</h1>
+
+
+<div>
+    <div style="text-align: center;">
+    <% projects.forEach(project => { %>
+        <h1 style="color: red; font-size: 2.5rem;">
+            <%= project.title %></h1>
+        <p><%= project.description %></p>
+        <small><%= project.date.toLocaleDateString(undefined, options) %></small>
+        <a href="/projects/<%= project._id %>">view</a>
+    
+    <% }) %>
+</div>
+</div>
+
+
+<%- include('partials/footer') %>

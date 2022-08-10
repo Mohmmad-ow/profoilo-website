@@ -1,0 +1,19 @@
+<%- include('partials/navbar') %>
+</nav>
+
+<div style="text-align:center ;">
+    <h1 style="color: gray;"><%= project.title %></h1>
+    <p><%= project.description %></p>
+    <ul style="text-decoration:none ;">
+        <li style="display: inline-block;">
+            <small><%= project.date.toLocaleDateString(undefined, options) %></small>
+        </li>
+        <li style="display: inline-block;">|</li>
+        <li style="display: inline-block;">
+            <a style="color: red" href="/projects/<%= project._id %>/edit">update</a>
+        </li>
+    </ul>
+</div>
+
+
+<%- include('partials/footer') %>

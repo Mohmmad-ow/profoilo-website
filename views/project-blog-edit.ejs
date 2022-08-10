@@ -1,0 +1,19 @@
+<%- include('partials/navbar') %>
+</nav>
+
+<div style="text-align:center ;">
+    <form method="post" action="/projects/<%= project._id %>/update">
+        <div>
+            <label for="title">Title</label>
+            <input id="title" type="text" name="title" value="<%= project.title %>" id="">
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="30" rows="10"><%= project.description %></textarea>
+        </div>
+
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+<%- include('partials/footer') %>
