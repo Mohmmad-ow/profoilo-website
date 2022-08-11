@@ -1,0 +1,14 @@
+<%- include('partials/navbar') %>
+</nav>
+
+<div style="text-align:center ;">
+    <h1 style="font-size:4rem ;">You want to delete this post?</h1>
+    <form  method="post" action="/projects/<%= project._id %>/delete">
+
+        <button style="height: 50px; width: 100px; display: inline-block; border: 1px solid #000; border-radius: 35px; background-color: #ec3a3a;" type="submit">Yes</button>
+
+
+    </form>
+</div>
+
+<%- include('partials/footer') %>

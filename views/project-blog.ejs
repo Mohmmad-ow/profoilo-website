@@ -4,9 +4,10 @@
 <div style="text-align:center ;">
     <h1 style="color: gray;"><%= project.title %></h1>
     <p><%= project.description %></p>
+    <small><%= project.date.toLocaleDateString(undefined, options) %></small>
     <ul style="text-decoration:none ;">
         <li style="display: inline-block;">
-            <small><%= project.date.toLocaleDateString(undefined, options) %></small>
+            <a style="color: red" href="/projects/<%= project._id %>/delete">Delete</a>
         </li>
         <li style="display: inline-block;">|</li>
         <li style="display: inline-block;">
