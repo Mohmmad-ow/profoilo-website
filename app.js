@@ -52,8 +52,7 @@ const pro1 = new Projects({
 
 app.get("/", (req, res) => {
     res.render("index")
-    tag1.save();
-    pro1.save();
+    
 
 })
 
@@ -110,7 +109,7 @@ app.get('/projects/:id', (req, res) => {
     Projects.findById(projectId, (err, doc) => {
         if (!err) {
             if (doc) {
-            res.render('project-blog', {project: doc, options: dateOptions});
+                res.render('project-blog', {project: doc, options: dateOptions});
             } else {
                 res.send("<h1>Didn't find</h1>");
             }
@@ -153,7 +152,7 @@ app.post('/projects/:id/update', (req, res) => {
 
         if(!err) {
             console.log("doc updated");
-            // res.redirect("/projects/" + projectId);
+            res.redirect("/projects/" + projectId);
         } else {
             console.log(err)
         }
