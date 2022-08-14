@@ -195,13 +195,25 @@ app.post('/projects/:id/delete', (req, res) => {
     
 });
 
-// Test for tags color
+// Test for tags choice
 
-app.get("/colors", (req, res) => {
-    res.render('color-input-test')
+app.get("/choice", (req, res) => {
+    Tags.find({}, (err, tags) => {
+        if (!err) {
+            if(tags) {
+                res.render('choice-input-test', {Tags: tags});
+            }
+            else {
+                res.send("No Tags");
+            }
+        } else {
+            console.log(err);
+        }
+        
+    })
 });
 
-app.post("/colors", (req, res) => {
+app.post("/choice", (req, res) => {
     console.log(req.body)
 })
 

@@ -1,0 +1,16 @@
+<%- include('partials/navbar') %>
+</nav>
+
+<div style="text-align:center ;">
+    <form method="post" action="/choice">
+        
+
+
+    <% Tags.forEach( tag => { %>
+        <input type="checkbox" name="tags" value="<%= tag.name %>"><%= tag.name %><br>
+    <% }) %>
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+<%- include('partials/footer') %>
