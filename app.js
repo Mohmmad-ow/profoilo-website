@@ -214,7 +214,22 @@ app.get("/choice", (req, res) => {
 });
 
 app.post("/choice", (req, res) => {
-    console.log(req.body)
+    console.log(req.body.tags);
+    const selectedTags = req.body.tags;
+    
+    selectedTags.forEach(tagId => {
+        Tags.findOne({_id: tagId}, (err, tag) => {
+            console.log(tag)
+            Projects.findOneAndUpdate({title: 'crape',"tags._id":{$ne: tag._id}}, { $push: { tags: tag }}, (err) => {
+                if (!err) {
+                    console.log( tag.name + " added")
+                } else {
+                    console.log(err)
+                }
+            });
+        })
+        res.redirect("/projects/");
+    });
 })
 
 

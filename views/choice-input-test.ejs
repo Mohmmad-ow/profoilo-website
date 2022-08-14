@@ -7,7 +7,7 @@
 
 
     <% Tags.forEach( tag => { %>
-        <input type="checkbox" name="tags" value="<%= tag.name %>"><%= tag.name %><br>
+        <input type="checkbox" name="tags" value="<%= tag._id %>"><%= tag.name %><br>
     <% }) %>
         <button type="submit">Update</button>
     </form>
