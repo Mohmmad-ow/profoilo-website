@@ -12,6 +12,11 @@
     <label for="description">Description</label>
     <textarea name="description" id="description"></textarea>
     </div>
+    <div class="tags">
+        <% tags.forEach( tag => { %>
+            <input type="checkbox" name="tags" value="<%= tag._id %>"><%= tag.name %><br>
+        <% }) %>
+    </div>
     <button type="submit">Publish</button>
 </form>
 

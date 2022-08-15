@@ -9,7 +9,9 @@
     <% projects.forEach(project => { %>
         <h1 style="color: red; font-size: 2.5rem;">
             <%= project.title %></h1>
-            <h3><%= project.tags %></h3>
+            <% project.tags.forEach( tag => { %> 
+                <h3 style="background-color: yellow; display: inline-block; border-radius: 45px; border: 1px solid #1e5fdf;"><%= tag.name %></h3>
+            <%  })  %>
         <p><%= project.description %></p>
         <small><%= project.date.toLocaleDateString(undefined, options) %></small>
 
