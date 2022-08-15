@@ -21,7 +21,7 @@ mongoose.connect("mongodb://localhost:27017/portfolioDB");
 // Tags schema
 
 const tagsSchema = mongoose.Schema({
-    name: {type: String, required: true, unique: true },
+    name: {type: String, required: true },
     colorValue: {type: String, default: '#000'}
 });
 
@@ -45,11 +45,10 @@ const tag1 = new Tags({
 });
 
 const pro1 = new Projects({
-    title: "crape",
+    title: "webScrape",
     description: "scrapes data",
     tags: [tag1]
 });
-
 app.get("/", (req, res) => {
     res.render("index")
     
@@ -62,23 +61,38 @@ app.get("/", (req, res) => {
 // make a project blog
 
 app.get('/projects/create',(req, res) => {
-    res.render("create-project");
+    Tags.find({}, (err, tags) => {
+        if(!err && tags) {
+            res.render("create-project", {tags: tags});
+        }
+    })
 });
 
 app.post ('/projects/create',(req, res) => {
     const title = req.body.title;
     const description = req.body.description;
-
-    const project = new Projects({
-        title: title,
-        description: description
-    });
-    project.save((err) => {
-        if(!err) {
-            console.log("created project");
-            res.redirect("/")
+    const tagsId = req.body.tags;
+    
+    Tags.find({_id: {$in: tagsId}}, (err, tags) => {
+        if(!err && tags) {
+            console.log(tags)
+            Projects.create({title: title, description: description, }, (err, doc) => {
+                if(!err) {
+                    Projects.findOneAndUpdate({_id: doc._id}, {tags: tags},(err, proj) => {
+                        if(!err) {
+                            
+                            res.redirect('/projects')
+                        }
+                    })
+                } else {
+                    console.log(err)
+                }
+            })
+        } else {
+            console.log(err)
         }
     })
+    
 });
 
 // View all projects
@@ -129,7 +143,14 @@ app.get('/projects/:id/edit', (req, res) => {
     Projects.findById(projectId, (err, doc) => {
         if (!err) {
             if (doc) {
-            res.render('project-blog-edit', {project: doc, options: dateOptions});
+                Tags.find({}, (err, tags) => {
+                    if (!err && tags) {
+
+                        res.render('project-blog-edit', {project: doc, options: dateOptions, tags: tags});
+                    } else {
+                        console.log(err)
+                    }
+                })
             } else {
                 res.send("<h1>Didn't find</h1>");
             }
@@ -147,17 +168,25 @@ app.post('/projects/:id/update', (req, res) => {
 
     const title = req.body.title;
     const description = req.body.description;
+    const tagsId = req.body.tags;
 
-    Projects.findByIdAndUpdate(projectId, {title: title, description: description, updateDate: Date()}, (err) => {
-
-        if(!err) {
-            console.log("doc updated");
-            res.redirect("/projects/" + projectId);
+    Tags.find({_id: {$in: tagsId}}, (err, tags) => {
+        if (!err && tags) {
+            
+            Projects.findByIdAndUpdate(projectId, {title: title, description: description, updateDate: Date(), tags: tags}, (err) => {
+        
+                if(!err) {
+                    console.log("doc updated");
+                    res.redirect("/projects/" + projectId);
+                } else {
+                    console.log(err)
+                }
+                
+            });
         } else {
             console.log(err)
         }
-        
-    });
+    })
 })
 
 // Delete a project
@@ -228,9 +257,13 @@ app.post("/choice", (req, res) => {
                 }
             });
         })
-        res.redirect("/projects/");
     });
-})
+
+
+    res.redirect("/projects/");
+    
+    
+});
 
 
 
