@@ -1,16 +1,18 @@
 <%- include('partials/navbar') %>
 </nav>
 
-<h1>Create a Project Blog</h1>
+<div class="form-div">
+<h1 class="form-header">Create a Project Blog</h1>
 
-<form class="project-form" action="/projects/create" method="POST">
-    <div class="input title">
+<form class="project-form-create" action="/projects/create" method="POST">
+    <div  class="input title form-header">
     <label for="title">Title</label>
-    <input type="text" name="title" id="title">
+    <input placeholder="Title" type="text" name="title" id="title">
     </div>
-    <div class="input description">
+    <hr>
+    <div class="input description form-header">
     <label for="description">Description</label>
-    <textarea name="description" id="description"></textarea>
+    <textarea placeholder="Description" name="description" id="description"></textarea>
     </div>
     <div class="tags">
         <% tags.forEach( tag => { %>
@@ -20,6 +22,6 @@
     <button type="submit">Publish</button>
 </form>
 
-
+</div>
 
 <%- include('partials/footer') %>

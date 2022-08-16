@@ -224,49 +224,6 @@ app.post('/projects/:id/delete', (req, res) => {
     
 });
 
-// Test for tags choice
-
-app.get("/choice", (req, res) => {
-    Tags.find({}, (err, tags) => {
-        if (!err) {
-            if(tags) {
-                res.render('choice-input-test', {Tags: tags});
-            }
-            else {
-                res.send("No Tags");
-            }
-        } else {
-            console.log(err);
-        }
-        
-    })
-});
-
-app.post("/choice", (req, res) => {
-    console.log(req.body.tags);
-    const selectedTags = req.body.tags;
-    
-    selectedTags.forEach(tagId => {
-        Tags.findOne({_id: tagId}, (err, tag) => {
-            console.log(tag)
-            Projects.findOneAndUpdate({title: 'crape',"tags._id":{$ne: tag._id}}, { $push: { tags: tag }}, (err) => {
-                if (!err) {
-                    console.log( tag.name + " added")
-                } else {
-                    console.log(err)
-                }
-            });
-        })
-    });
-
-
-    res.redirect("/projects/");
-    
-    
-});
-
-
-
 
 // Running server
 app.listen(3000, () => {

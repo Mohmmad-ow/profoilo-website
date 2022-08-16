@@ -522,3 +522,45 @@ ul.links-list li a:hover {
     opacity: .5;
     color: #E7F6F2;
 }
+
+
+
+/* _______________This is the create Project style sheet_______________ */
+
+
+
+/* Project Form */
+.form-div {
+    text-align: center;
+    background-color: #BFFFF0;
+    padding: 100px 80px;
+}
+
+.form-header {
+    font-family: 'Oswald', sans-serif;
+}
+
+.project-form-create {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input input, textarea {
+    width: 100%;
+
+    
+    background-color: transparent;
+    border: 1px solid #607EAA;
+    border-radius: 45px;
+    padding: 6px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    
+}
+
+label {
+    float: left;
+    padding-left: 4px;
+}
