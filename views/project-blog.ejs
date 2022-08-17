@@ -1,9 +1,11 @@
 <%- include('partials/navbar') %>
 </nav>
 
-<div style="text-align:center ;">
+<div class="blog-div" style="text-align:center ; background-color: antiquewhite; padding: 0 50px;">
     <h1 style="color: gray;"><%= project.title %></h1>
-    <p><%= project.description %></p>
+    <div style="padding: 20px 80px;">
+        <%- project.description %>
+    </div>
     <small><%= project.date.toLocaleDateString(undefined, options) %></small>
     <ul style="text-decoration:none ;">
         <li style="display: inline-block;">

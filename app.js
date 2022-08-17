@@ -2,14 +2,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+var path = require('path');
 
 
 // initializations and functions
 const app = express();
 app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
-
+app.use(express.static(path.join(__dirname, 'public')));
+// Including tiny into a script file
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
 // Database config
 
@@ -61,6 +63,7 @@ app.get("/", (req, res) => {
 // make a project blog
 
 app.get('/projects/create',(req, res) => {
+    
     Tags.find({}, (err, tags) => {
         if(!err && tags) {
             res.render("create-project", {tags: tags});
@@ -75,7 +78,7 @@ app.post ('/projects/create',(req, res) => {
     
     Tags.find({_id: {$in: tagsId}}, (err, tags) => {
         if(!err && tags) {
-            console.log(tags)
+            // console.log(tags)
             Projects.create({title: title, description: description, }, (err, doc) => {
                 if(!err) {
                     Projects.findOneAndUpdate({_id: doc._id}, {tags: tags},(err, proj) => {
