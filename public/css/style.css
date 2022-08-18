@@ -564,6 +564,28 @@ ul.links-list li a:hover {
     
 }
 
-label {
-    
+/* View Projects blog */
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'tags tags tags dates dates dates'
+        'description description description description description description';
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
 }
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+/* Grid elements */
+.grid-title { grid-area: header; }
+.grid-tags { grid-area: tags; }
+.grid-dates { grid-area: dates; }
+.grid-description { grid-area: description; }
