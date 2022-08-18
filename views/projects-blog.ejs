@@ -4,26 +4,28 @@
 <h1>All My Projects</h1>
 
 
-<div>
+<div class="project-grid-container">
     
     <% projects.forEach(project => { %>
         <div class="grid-container">
         <div class="grid-title">
-            <h1 style="color: red; font-size: 2.5rem;"><%= project.title %></h1>
+            <h1><%= project.title %></h1>
         </div>
             <div class="grid-tags">
-            <% project.tags.forEach( tag => { %> 
-                <h3 style="background-color: yellow; display: inline-block; border-radius: 45px; border: 1px solid #1e5fdf;"><%= tag.name %></h3>
+            <% project.tags.forEach( tag => { %>
+                <div class="tag" style="background-color: <%= tag.colorValue %>">
+                    <p><%= tag.name %></p>
+                </div>
             <%  })  %>
-            </div>
-            <div class="grid-description">
-            <p><%- project.description %></p>
             </div>
             <div class="grid-dates">
                 <small><%= project.date.toLocaleDateString(undefined, options) %></small>
             </div>
+            <div class="grid-description">
+            <p><%- project.description %></p>
+            <a href="/projects/<%= project._id %>">view</a>
+            </div>
 
-        <a href="/projects/<%= project._id %>">view</a>
     </div>
     
     <% }) %>
