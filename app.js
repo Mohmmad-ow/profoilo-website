@@ -33,6 +33,7 @@ const Tags = mongoose.model('tag', tagsSchema);
 const projectsSchema = mongoose.Schema({
     title: { type: String, required: true },
     description: { type: String},
+    blog: {type: String},
     date: { type: Date, required: true, default: Date() },
     updateDate: {type: Date},
     tags: [tagsSchema]
@@ -74,12 +75,12 @@ app.get('/projects/create',(req, res) => {
 app.post ('/projects/create',(req, res) => {
     const title = req.body.title;
     const description = req.body.description;
+    const blog = req.body.blog;
     const tagsId = req.body.tags;
     
     Tags.find({_id: {$in: tagsId}}, (err, tags) => {
         if(!err && tags) {
-            // console.log(tags)
-            Projects.create({title: title, description: description, }, (err, doc) => {
+            Projects.create({title: title, description: description, blog: blog }, (err, doc) => {
                 if(!err) {
                     Projects.findOneAndUpdate({_id: doc._id}, {tags: tags},(err, proj) => {
                         if(!err) {
@@ -171,12 +172,13 @@ app.post('/projects/:id/update', (req, res) => {
 
     const title = req.body.title;
     const description = req.body.description;
+    const blog = req.body.blog;
     const tagsId = req.body.tags;
 
     Tags.find({_id: {$in: tagsId}}, (err, tags) => {
         if (!err && tags) {
             
-            Projects.findByIdAndUpdate(projectId, {title: title, description: description, updateDate: Date(), tags: tags}, (err) => {
+            Projects.findByIdAndUpdate(projectId, {title: title, description: description,blog: blog, updateDate: Date(), tags: tags}, (err) => {
         
                 if(!err) {
                     console.log("doc updated");

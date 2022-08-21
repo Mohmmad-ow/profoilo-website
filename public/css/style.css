@@ -566,22 +566,32 @@ ul.links-list li a:hover {
 
 /* View Projects blog */
 
+.project-grid-container {
+    text-align: center;
+    padding: 50px 50px;
+    margin-right: 60px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 20px 30px;
+}
+
 .grid-container {
+    border-radius: 45px;
     display: grid;
     grid-template-areas:
         'header header header header header header'
         'tags tags tags dates dates dates'
         'description description description description description description';
   gap: 10px;
-  background-color: #2196F3;
   padding: 10px;
 }
 
 .grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    color: #fff;
     text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+    font-family: 'PT Serif', serif; 
+    padding: 5px 10px;
 }
 
 /* Grid elements */
@@ -589,3 +599,15 @@ ul.links-list li a:hover {
 .grid-tags { grid-area: tags; }
 .grid-dates { grid-area: dates; }
 .grid-description { grid-area: description; }
+
+.tag {
+    color: rgb(25, 21, 21);
+    display:inline-block;
+    padding: 5px 2px;
+    border: 1px solid ;
+    border-radius: 45px; 
+}
+
+.tag p {
+    padding: 0px 2px;
+}

@@ -1,15 +1,19 @@
 <%- include('partials/navbar') %>
 </nav>
 
-<div style="text-align:center ;">
-    <form method="post" action="/projects/<%= project._id %>/update">
-        <div>
+<div class="form-div">
+    <form class="project-form-create" method="post" action="/projects/<%= project._id %>/update">
+        <div class="input title form-header">
             <label for="title">Title</label>
             <input id="title" type="text" name="title" value="<%= project.title %>" id="">
         </div>
-        <div>
+        <div class="input description form-header">
             <label for="my-expressjs-tinymce-app">Description</label>
-            <textarea name="description" id="my-expressjs-tinymce-app" cols="30" rows="10"><%= project.description %></textarea>
+            <textarea name="description" cols="30" rows="10"><%= project.description %></textarea>
+        </div>
+        <div class="input description form-header">
+            <label for="my-expressjs-tinymce-app">Blog</label>
+            <textarea name="blog" id="my-expressjs-tinymce-app" cols="30" rows="10"><%= project.blog %></textarea>
         </div>
         <div>
             <% tags.forEach( tag => { %>
