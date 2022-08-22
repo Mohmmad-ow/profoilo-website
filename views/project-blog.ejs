@@ -1,21 +1,50 @@
 <%- include('partials/navbar') %>
 </nav>
-
-<div class="blog-div" style="text-align:center ; background-color: antiquewhite; padding: 0 50px;">
-    <h1 style="color: gray;"><%= project.title %></h1>
-    <div style="padding: 20px 80px;">
-        <%- project.description %>
+<div class="space-up">
+    
+</div>
+<div class="blog-div grid-container-blog">
+    <div class="grid-null-blog"></div>
+    <div class="grid-date-blog">
+    <small class="date">Created: <%= project.date.toLocaleDateString(undefined, options) %></small>
     </div>
-    <small><%= project.date.toLocaleDateString(undefined, options) %></small>
-    <ul style="text-decoration:none ;">
-        <li style="display: inline-block;">
-            <a style="color: red" href="/projects/<%= project._id %>/delete">Delete</a>
-        </li>
-        <li style="display: inline-block;">|</li>
-        <li style="display: inline-block;">
-            <a style="color: red" href="/projects/<%= project._id %>/edit">update</a>
-        </li>
-    </ul>
+    <div class="grid-last-updated-blog">
+    <small class="date">last update: <%= project.updateDate.toLocaleDateString(undefined, options) %></small>
+    </div>
+    <div class="grid-null2-blog"></div>
+    <div class="grid-title-blog">
+        <h1 class="title"><%= project.title %></h1>
+    </div>
+    <div class="grid-description-blog">
+        <div class="description">
+            <%- project.description %>
+        </div>
+        <div class="tags-blog">
+            <% project.tags.forEach( tag => { %>
+                <div class="tag" style="background-color: <%= tag.colorValue %>">
+                    <small><%= tag.name %></small>
+                </div>
+            <%  })  %>
+        </div>
+    </div>
+    <div class="grid-blog-blog">
+        <%- project.blog %>
+    </div>
+    <div class="grid-details-blog">
+        <ul style="text-decoration:none ;">
+            <li style="display: inline-block;">
+                <a style="color: red" href="/projects/<%= project._id %>/delete">Delete</a>
+            </li>
+            <li style="display: inline-block;">|</li>
+            <li style="display: inline-block;">
+                <a style="color: red" href="/projects/<%= project._id %>/edit">update</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<div class="space-bottom">
+    
 </div>
 
 

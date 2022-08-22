@@ -611,3 +611,50 @@ ul.links-list li a:hover {
 .tag p {
     padding: 0px 2px;
 }
+
+/* View Project styling */
+.blog-div {
+    border-radius: 45px;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 4px 4px 10px #89CFFD;
+  }
+
+  .grid-container-blog {
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+    display: grid;
+    grid-template-areas:
+        'emptySpace emptySpace date last-updated emptySpace2 emptySpace2'
+        'title title title title description description'
+        'blog blog blog blog blog blog'
+        '. . details details . .';
+    gap: 10px;
+    padding: 10px;
+  }
+
+  /* grid-elements */
+
+.grid-title-blog { grid-area: title;}
+.grid-null-blog { grid-area: emptySpace;  width: 200px;}
+.grid-null2-blog { grid-area: emptySpace2;  width: 200px;}
+.grid-date-blog { grid-area: date; }
+.grid-last-updated-blog { grid-area: last-updated; }
+.grid-description-blog { grid-area: description; }
+.grid-blog-blog { grid-area: blog; }
+.grid-details-blog { grid-area: details; }
+
+.description {
+    padding-bottom: 20px;
+}
+.space-up {
+    padding-top: 100px;
+}
+.space-bottom {
+    padding-bottom: 100px;
+}
