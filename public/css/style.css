@@ -36,6 +36,10 @@ li a {
     font-size: large;
     float: left;
 }
+
+.nav-title > a {
+    color: #000
+}
 .nav-sections {
     font-family: 'MuseoModerno', cursive;
     float: right;
@@ -539,6 +543,10 @@ ul.links-list li a:hover {
     background-color: #BFFFF0;
     padding: 100px 80px;
 }
+.inline-t-d > div {
+    display: inline-block;
+    padding: 10px;
+}
 
 .form-header {
     font-family: 'Oswald', sans-serif;
@@ -553,7 +561,6 @@ ul.links-list li a:hover {
 .input input, textarea {
     width: 100%;
 
-    
     background-color: transparent;
     border: 1px solid #607EAA;
     border-radius: 45px;
@@ -573,9 +580,11 @@ ul.links-list li a:hover {
     display: grid;
     grid-template-columns: 33% 33% 33%;
     gap: 20px 30px;
+    
 }
 
 .grid-container {
+    
     border-radius: 45px;
     display: grid;
     grid-template-areas:
@@ -590,15 +599,24 @@ ul.links-list li a:hover {
     padding: 5px;
     color: #fff;
     text-align: center;
-    font-family: 'PT Serif', serif; 
+    
     padding: 5px 10px;
 }
 
 /* Grid elements */
-.grid-title { grid-area: header; }
-.grid-tags { grid-area: tags; }
+.grid-title { grid-area: header; font-family: 'PT Serif', serif; }
+.grid-tags { grid-area: tags;font-family: 'League Spartan', sans-serif; }
 .grid-dates { grid-area: dates; }
-.grid-description { grid-area: description; }
+.grid-description { grid-area: description;font-family: 'League Spartan', sans-serif; }
+
+.grid-container > div > a {
+    text-decoration: none;
+    color: #fff
+}
+.grid-container > div > a:hover {
+    text-decoration: none;
+    color: #319DA0
+}
 
 .tag {
     color: rgb(25, 21, 21);
@@ -624,15 +642,25 @@ ul.links-list li a:hover {
     box-shadow: 4px 4px 10px #89CFFD;
   }
 
+  .blog-div-2 {
+    border-radius: 45px;
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 10px 50px;
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 4px 4px 10px #89CFFD;
+  }
+
   .grid-container-blog {
+    padding: 20px 0;
     align-items: center;
     justify-content: space-around;
-    height: 400px;
     display: grid;
     grid-template-areas:
         'emptySpace emptySpace date last-updated emptySpace2 emptySpace2'
         'title title title title description description'
-        'blog blog blog blog blog blog'
         '. . details details . .';
     gap: 10px;
     padding: 10px;
@@ -646,8 +674,11 @@ ul.links-list li a:hover {
 .grid-date-blog { grid-area: date; }
 .grid-last-updated-blog { grid-area: last-updated; }
 .grid-description-blog { grid-area: description; }
-.grid-blog-blog { grid-area: blog; }
 .grid-details-blog { grid-area: details; }
+
+.grid-title-blog h1 {
+    font-size: 6rem;
+}
 
 .description {
     padding-bottom: 20px;

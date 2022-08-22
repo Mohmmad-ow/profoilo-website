@@ -10,19 +10,21 @@
     <input placeholder="Title" type="text" name="title" id="title">
     </div>
     <hr>
+    <div class="inline-t-d">
     <div class="input description form-header">
         <label for="description">Description</label>
-        <textarea placeholder="Description" name="description" id="description"></textarea>
-    </div>
-    <hr>
-    <div class="input description form-header">
-    <label for="blog">Blog</label>
-    <textarea id="my-expressjs-tinymce-app" placeholder="Blog" name="blog" id="blog"></textarea>
+        <textarea cols="30" rows="10" placeholder="Description" name="description" id="description"></textarea>
     </div>
     <div class="tags">
         <% tags.forEach( tag => { %>
             <input type="checkbox" name="tags" value="<%= tag._id %>"><%= tag.name %><br>
         <% }) %>
+    </div>
+</div>
+    <hr>
+    <div class="input description form-header">
+    <label for="blog">Blog</label>
+    <textarea id="my-expressjs-tinymce-app" placeholder="Blog" name="blog" id="blog"></textarea>
     </div>
     <button type="submit">Publish</button>
 </form>
