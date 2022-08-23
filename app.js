@@ -41,24 +41,17 @@ const projectsSchema = mongoose.Schema({
 const Projects = mongoose.model('project', projectsSchema);
 
 
-// tags-in-project
-const tag1 = new Tags({
-    name: "TypeScript",
-    colorValue: "#000"
-});
 
-const pro1 = new Projects({
-    title: "webScrape",
-    description: "scrapes data",
-    tags: [tag1]
-});
+
 app.get("/", (req, res) => {
-    res.render("index")
+    res.render("index");
     
 
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact-form');
 })
-
-
 
 
 // make a project blog

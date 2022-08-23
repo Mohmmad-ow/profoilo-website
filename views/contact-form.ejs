@@ -1,0 +1,27 @@
+<%- include('partials/navbar') %>
+</nav>
+
+<div style="text-align: center;" class="contact-from-div">
+    <h1>To Send an email</h1>
+     
+
+    <form class="contact-form" action="https://formsubmit.co/8e92a224e630425342a023067a1cf611" method="POST">
+        <label style="color: #000;" for="name">Your Name: </label>
+        <input id="name" class="contact-name" type="text" name="name" placeholder="Enter your name" required>
+        <label style="color: #000;" for="email">Your Email: </label>
+        <input id="email" class="contact-email" type="email" name="email"  placeholder="Enter your email" required>
+        <br>
+        <br>
+        <textarea class="contact-message" name="message" cols="30" rows="10" placeholder="Enter your message"></textarea>
+        <br>
+        <br>
+        <div>
+            <h5 style="color: #000;">Phone Number is: int: +9647822047103 loc: 07822047103</h5>
+        </div>
+        <button class="contact-button" type="submit">Send</button>
+   </form> 
+
+
+</div>
+
+<%- include('partials/footer') %>
