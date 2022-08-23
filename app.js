@@ -46,7 +46,6 @@ const Projects = mongoose.model('project', projectsSchema);
 app.get("/", (req, res) => {
     res.render("index");
     
-
 });
 
 app.get('/contact', (req, res) => {
@@ -223,6 +222,42 @@ app.post('/projects/:id/delete', (req, res) => {
 });
 
 
+// Tags CRUD section
+app.get('/tags', (req, res) => {
+    Tags.find({}, (err, docs) => {
+        if(!err && docs) {
+            res.render('all-tags', {tags: docs})
+        }
+    })
+})
+
+// Create tag
+
+
+app.get('/tags/create', (req, res) => {
+    res.render('tag-create')
+})
+
+app.post('/tags/create', (req, res) => {
+    const name = req.body.tagName;
+    const color = req.body.tagColor;
+    Tags.create({name: name,colorValue: color}, (err) => {
+        if(!err) {
+            res.redirect("/projects/create")
+        }
+    })
+})
+
+// Delete tag
+app.post('/tags/:id/delete', (req, res) => {
+    const tagId = req.params.id;
+    Tags.findByIdAndDelete(tagId, (err) => {
+        if(!err) {
+            console.log('tag deleted')
+            res.redirect('/projects/create')
+        }
+    })
+})
 // Running server
 app.listen(3000, () => {
     console.log("Server running on port 3000");

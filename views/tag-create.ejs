@@ -1,0 +1,15 @@
+<%- include('partials/navbar') %>
+</nav>
+
+<form class="" action="/tags/create" method="POST">
+    <label for="tagName">Tag Name: </label>
+    <input type="text" name="tagName" id="tagName">
+    <label for="tagColor">Tag Color: </label>
+    <input type="color" id="tagColor" name="tagColor"
+           value="#e66465">
+    <button type="submit">Add Tag</button>
+</form>
+
+
+
+<%- include('partials/footer') %>

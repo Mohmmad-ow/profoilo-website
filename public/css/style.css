@@ -571,6 +571,10 @@ ul.links-list li a:hover {
     
 }
 
+textarea {
+    padding: 14px;
+}
+
 /* View Projects blog */
 
 .project-grid-container {

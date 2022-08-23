@@ -1,0 +1,28 @@
+<%- include('partials/navbar') %>
+</nav>
+
+<h1 style="text-align: center;">All My Tags</h1>
+<hr style="width: 80%;">
+
+<div class="project-grid-container">
+    
+    <% tags.forEach(tag => { %>
+        <div class="grid-container" style="background-color: <%= tag.colorValue %>">
+        
+            <div class="grid-title">
+                   <h1><%= tag.name %></h1>
+            </div>
+            <div class="grid-description">
+            <form action="/tags/<%= tag._id %>/delete" method="post">
+               <button style="border-radius: 45px; background-color: #E64848;" type="submit">Delete</button>
+            </form>
+            </div>
+           
+        </div>
+            
+            <% }) %>
+    
+
+</div>
+
+<%- include('partials/footer') %>
