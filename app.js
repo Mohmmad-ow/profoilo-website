@@ -3,6 +3,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 var path = require('path');
+require("dotenv").config();
+
 
 
 // initializations and functions
@@ -14,8 +16,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
 // Database config
+const secretKeys = process.env.MONGODB_AUTH;
 
-mongoose.connect("mongodb+srv://test:test-123@portfolio.j0wd0a8.mongodb.net/?retryWrites=true&w=majority");
+
+mongoose.connect("mongodb+srv://" + secretKeys + ".j0wd0a8.mongodb.net/?retryWrites=true&w=majority");
 
 
 
@@ -259,6 +263,9 @@ app.post('/tags/:id/delete', (req, res) => {
     })
 })
 // Running server
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
-})
+
+
+app.listen(process.env.PORT || 3000, () => {
+
+    console.log("Server is running...")
+});
