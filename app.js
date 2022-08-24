@@ -19,7 +19,7 @@ app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce
 const secretKeys = process.env.MONGODB_AUTH;
 
 
-mongoose.connect("mongodb+srv://" + secretKeys + ".j0wd0a8.mongodb.net/?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://mohmmad:Moemessi10@portfolio.j0wd0a8.mongodb.net/?retryWrites=true&w=majority");
 
 
 // Tags schema
