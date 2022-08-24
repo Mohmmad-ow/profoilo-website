@@ -546,6 +546,23 @@ ul.links-list li a:hover {
 .inline-t-d > div {
     display: inline-block;
     padding: 10px;
+    padding-left: 35px;
+}
+.create-tag {
+    
+    padding: 10px;
+    text-decoration: none;
+    background-color: #358fca;
+    border-radius: 45px;
+    color: #fff;
+}
+.create-tag:hover {
+    
+    padding: 10px;
+    text-decoration: none;
+    background-color: #ce3b28;
+    border-radius: 45px;
+    color: rgb(0, 0, 0);
 }
 
 .form-header {
@@ -576,6 +593,23 @@ textarea {
 }
 
 /* View Projects blog */
+
+.create-project {
+    margin-left: 45%;
+    padding: 20px;
+    text-decoration: none;
+    background-color: #358fca;
+    border-radius: 45px;
+    color:#fff;
+}
+.create-project:hover {
+    margin-left: 45%;
+    padding: 20px;
+    text-decoration: none;
+    background-color: #76e63b;
+    border-radius: 45px;
+    color:#000000;
+}
 
 .project-grid-container {
     text-align: center;

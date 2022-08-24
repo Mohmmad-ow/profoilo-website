@@ -1,9 +1,9 @@
 <%- include('partials/navbar') %>
 </nav>
 
-<h1 style="text-align: center;">All My Projects</h1>
+<h1 style="text-align: center; padding-bottom: 14px;">All My Projects</h1>
 <hr style="width: 80%;">
-
+<hr>
 <div class="project-grid-container">
     
     <% projects.forEach(project => { %>
@@ -31,6 +31,8 @@
     <% }) %>
 
 </div>
+<a class="create-project" href="/projects/create">Create a Project!</a>
+
 
 <script src="/javascripts/randomcolor.js"></script>
 <%- include('partials/footer') %>

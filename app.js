@@ -15,7 +15,7 @@ app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce
 
 // Database config
 
-mongoose.connect("mongodb://localhost:27017/portfolioDB");
+mongoose.connect("mongodb+srv://test:test-123@portfolio.j0wd0a8.mongodb.net/?retryWrites=true&w=majority");
 
 
 
@@ -35,7 +35,7 @@ const projectsSchema = mongoose.Schema({
     description: { type: String},
     blog: {type: String},
     date: { type: Date, required: true, default: Date() },
-    updateDate: {type: Date},
+    updateDate: {type: Date, default: Date()},
     tags: [tagsSchema]
 });
 const Projects = mongoose.model('project', projectsSchema);
