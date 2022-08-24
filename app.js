@@ -22,8 +22,6 @@ const secretKeys = process.env.MONGODB_AUTH;
 mongoose.connect("mongodb+srv://" + secretKeys + ".j0wd0a8.mongodb.net/?retryWrites=true&w=majority");
 
 
-
-
 // Tags schema
 
 const tagsSchema = mongoose.Schema({
