@@ -1,0 +1,224 @@
+const router = require('express').Router();
+const {User, Projects, Tags} = require('../config/database');
+
+
+// options for how to view time
+const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' , hour: 'numeric', minute: 'numeric'};
+
+
+router.get("/", (req, res,next) => {
+    res.render("index");
+    
+});
+
+router.get('/contact', (req, res, next) => {
+    res.render('contact-form');
+});
+
+
+// make a project blog
+
+router.get('/projects/create',(req, res, next) => {
+    
+    Tags.find({}, (err, tags) => {
+        if(!err && tags) {
+            res.render("create-project", {tags: tags});
+        }
+    })
+});
+// fixed this 
+/* problem was you needed to make to DB reqs one to create the post and one to update it and now with using the then() promis
+  metod i don't need to do that
+*/
+router.post ('/projects/create',(req, res, next) => {
+    const title = req.body.title;
+    const description = req.body.description;
+    const blog = req.body.blog;
+    const tagsId = req.body.tags;
+    console.log("nothing")
+    Tags.find({_id: {$in: tagsId}}).then(tags => {
+        if (tags) {
+            console.log(tags)
+            Projects.create({title: title, description: description, blog: blog, tags: tags }, (err, doc) => {
+                            if(!err) {
+            
+                                        res.redirect('/projects')
+                                
+                            } else {
+                                console.log(err)
+                            }
+                        })
+        }
+    })
+    .catch(err => {
+        console.log(err)
+    })
+    
+});
+
+
+
+
+router.get('/projects', (req, res, next) => {
+    Projects.find({}, (err, docs) => {
+        if(!err) {
+            if(docs) {
+                res.render('projects-blog', {projects: docs, options: dateOptions})
+            } else {
+                console.log("No docs found.")
+            }
+        } else {
+            console.log(err)
+        }
+    })
+});
+
+// view the project by id
+
+router.get('/projects/:id', (req, res, next) => {
+    const projectId = req.params.id;
+
+    Projects.findById(projectId, (err, doc) => {
+        if (!err) {
+            if (doc) {
+                res.render('project-blog', {project: doc, options: dateOptions});
+            } else {
+                res.send("<h1>Didn't find</h1>");
+            }
+        } else {
+            console.log(err);
+        }
+    });
+});
+
+// update
+
+
+// _____this is to edit the post______
+router.get('/projects/:id/edit', (req, res, next) => {
+    const projectId = req.params.id;
+
+    Projects.findById(projectId, (err, doc) => {
+        if (!err) {
+            if (doc) {
+                Tags.find({}, (err, tags) => {
+                    if (!err && tags) {
+
+                        res.render('project-blog-edit', {project: doc, options: dateOptions, tags: tags});
+                    } else {
+                        console.log(err)
+                    }
+                })
+            } else {
+                res.send("<h1>Didn't find</h1>");
+            }
+        } else {
+            console.log(err);
+        }
+    });
+
+});
+
+// _____this is to update the edited post_____
+
+router.post('/projects/:id/update', (req, res, next) => {
+    const projectId = req.params.id;
+
+    const title = req.body.title;
+    const description = req.body.description;
+    const blog = req.body.blog;
+    const tagsId = req.body.tags;
+
+    Tags.find({_id: {$in: tagsId}}, (err, tags) => {
+        if (!err && tags) {
+            
+            Projects.findByIdAndUpdate(projectId, {title: title, description: description,blog: blog, updateDate: Date(), tags: tags}, (err) => {
+        
+                if(!err) {
+                    console.log("doc updated");
+                    res.redirect("/projects/" + projectId);
+                } else {
+                    console.log(err)
+                }
+                
+            });
+        } else {
+            console.log(err)
+        }
+    })
+});
+
+// Delete a project
+
+
+// _____view the post you want to delete______
+
+router.get('/projects/:id/delete', (req, res, next) => {
+    const projectId = req.params.id;
+
+    Projects.findById(projectId, (err, doc) => {
+        if (!err) {
+            if (doc) {
+            res.render('project-blog-delete', {project: doc});
+            } else {
+                res.send("<h1>Didn't find</h1>");
+            }
+        } else {
+            console.log(err);
+        }
+    });
+
+});
+
+router.post('/projects/:id/delete', (req, res, next) => {
+    const projectId = req.params.id;
+
+    Projects.findByIdAndDelete(projectId, (err) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send("Project blog deleted");
+        }
+    });
+    
+});
+
+
+// Tags CRUD section
+router.get('/tags', (req, res, next) => {
+    Tags.find({}, (err, docs) => {
+        if(!err && docs) {
+            res.render('all-tags', {tags: docs})
+        }
+    })
+});
+
+// Create tag
+
+
+router.get('/tags/create', (req, res, next) => {
+    res.render('tag-create')
+});
+
+router.post('/tags/create', (req, res, next) => {
+    const name = req.body.tagName;
+    const color = req.body.tagColor;
+    Tags.create({name: name,colorValue: color}, (err) => {
+        if(!err) {
+            res.redirect("/projects/create")
+        }
+    })
+});
+promis
+// Delete tag
+router.post('/tags/:id/delete', (req, res, next) => {
+    const tagId = req.params.id;
+    Tags.findByIdAndDelete(tagId, (err) => {
+        if(!err) {
+            console.log('tag deleted')
+            res.redirect('/projects/create')
+        }
+    })
+});
+
+module.exports = router
