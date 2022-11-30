@@ -209,7 +209,7 @@ router.post('/tags/create', (req, res, next) => {
         }
     })
 });
-promis
+
 // Delete tag
 router.post('/tags/:id/delete', (req, res, next) => {
     const tagId = req.params.id;
