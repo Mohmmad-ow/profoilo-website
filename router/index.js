@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const {User, Projects, Tags} = require('../config/database');
-
+const {genPassword} = require('../Utils/passwordVaild')
 
 // options for how to view time
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' , hour: 'numeric', minute: 'numeric'};
@@ -15,6 +15,10 @@ router.get('/contact', (req, res, next) => {
     res.render('contact-form');
 });
 
+
+// User auth
+
+// TODO make the user regiseter and user login 
 
 // make a project blog
 
