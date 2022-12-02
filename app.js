@@ -5,8 +5,14 @@ const mongoose = require("mongoose");
 var path = require('path');
 require("dotenv").config();
 
-// Importing the DB modules
-const {User, Projects, Tags} = require('./config/database')
+
+// express session
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
+
+// User auht with passport
+const passport = require('passport')
+const passportLocal = require('passport-local')
 
 // initializations and functions
 const app = express();
@@ -21,12 +27,30 @@ const router = require('./router/index.js')
 
 // Database config
 const DB_STRING = process.env.DB_STRING_DEV;
+const dbOptions = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}
 
+mongoose.connect(DB_STRING, dbOptions);
 
-mongoose.connect(DB_STRING);
+// Session config
+const Store = MongoStore.create({mongoUrl: DB_STRING, mongoOptions: dbOptions})
 
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true,
+    store: Store,
+    cookie: {
+        maxAge: 30 * 1000 * 24  * 60 * 60 /* This would be a month till it expires */
+    }
+}))
 
+// passport config
 
+app.use(passport.initialize())
+app.use(passport.session())
 
 
 // Running server
