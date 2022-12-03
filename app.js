@@ -14,6 +14,10 @@ const MongoStore = require('connect-mongo')
 const passport = require('passport')
 const passportLocal = require('passport-local')
 
+
+// Import passport Config'
+require('./config/passport');
+
 // initializations and functions
 const app = express();
 app.set("view engine", 'ejs');

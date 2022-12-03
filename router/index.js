@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const passport = require('passport');
 const {User, Projects, Tags} = require('../config/database');
 const {genPassword} = require('../Utils/passwordVaild')
 
@@ -19,7 +20,44 @@ router.get('/contact', (req, res, next) => {
 // User auth
 
 // TODO make the user regiseter and user login 
+router.get('/regiester', (req, res, next) => {
+    res.render('regiester.ejs')
+})
 
+router.post('/regiester', (req, res, next) => {
+    console.log(req.body)
+    const email = req.body.email;
+    const password = req.body.password;
+    const saltHash = genPassword(password);
+    const salt = saltHash.salt;
+    const hash = saltHash.hash;
+    console.log(salt, hash)
+    User.create({email: email, salt: salt, hash: hash}).then(user => {
+        if (!user) {
+            console.log("didn't regiester the user.")
+        } else {
+            console.log(`Email: ${user.email}
+            salt: ${user.salt}
+            hash: ${user.hash}`)
+            res.redirect('login')
+        }
+    })
+    .catch(err => console.log(err))
+
+});
+
+router.get('/login', (req, res, next) => {
+    res.render('login')
+});
+
+router.post('/login', passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: '/login-success' }));
+
+router.get('/login-success', (req, res, next) => {
+    res.send('<h1>LogedIn successfully</h1>')
+})
+router.get('/login-failure', (req, res, next) => {
+    res.send('<h1>LogedIn Unsuccessfully</h1>')
+})
 // make a project blog
 
 router.get('/projects/create',(req, res, next) => {
