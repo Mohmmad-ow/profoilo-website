@@ -19,12 +19,12 @@ router.get('/contact', (req, res, next) => {
 
 // User auth
 
-// TODO make the user regiseter and user login 
-router.get('/regiester', (req, res, next) => {
-    res.render('regiester.ejs')
+// TODO make the user register and user login 
+router.get('/register', (req, res, next) => {
+    res.render('register.ejs')
 })
 
-router.post('/regiester', (req, res, next) => {
+router.post('/register', (req, res, next) => {
     console.log(req.body)
     const email = req.body.email;
     const password = req.body.password;
@@ -34,7 +34,7 @@ router.post('/regiester', (req, res, next) => {
     console.log(salt, hash)
     User.create({email: email, salt: salt, hash: hash}).then(user => {
         if (!user) {
-            console.log("didn't regiester the user.")
+            console.log("didn't register the user.")
         } else {
             console.log(`Email: ${user.email}
             salt: ${user.salt}

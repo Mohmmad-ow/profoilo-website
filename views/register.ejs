@@ -1,0 +1,23 @@
+<%- include('partials/navbar') %>
+
+<form id="register" action="/register" method="POST">
+    <div class="register-div">
+        <h1 class="register-header">Become a blogger here!</h1>
+        
+        <div class="input-field">
+            <label class="input-label-email" for="email">Email</label>
+            <input  placeholder="Enter your Email" type="email" name="email" id="email">
+        </div>
+        <div class="input-field">
+            <label class="input-label-password" for="password">Password</label>
+            <input placeholder="Enter your Password" type="text" name="password" id="password">
+        </div>
+        <div class="input-field">
+            <button class="register-button" type="submit">register</button>
+        </div>
+    </div>
+</form>
+
+
+
+<%- include('partials/footer') %>
