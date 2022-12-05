@@ -8,6 +8,7 @@ const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'num
 
 
 router.get("/", (req, res,next) => {
+    
     res.render("index");
     
 });
@@ -31,8 +32,10 @@ router.post('/register', (req, res, next) => {
     const saltHash = genPassword(password);
     const salt = saltHash.salt;
     const hash = saltHash.hash;
+    const firstName = req.body.firstn
+    const lastName = req.body.lastn
     console.log(salt, hash)
-    User.create({email: email, salt: salt, hash: hash}).then(user => {
+    User.create({email: email, salt: salt, hash: hash, firstName: firstName, lastName: lastName}).then(user => {
         if (!user) {
             console.log("didn't register the user.")
         } else {
@@ -53,10 +56,10 @@ router.get('/login', (req, res, next) => {
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: '/login-success' }));
 
 router.get('/login-success', (req, res, next) => {
-    res.send('<h1>LogedIn successfully</h1>')
+    res.send('<h1>Logged In successfully</h1>')
 })
 router.get('/login-failure', (req, res, next) => {
-    res.send('<h1>LogedIn Unsuccessfully</h1>')
+    res.send('<h1>Logged In Unsuccessfully</h1>')
 })
 // make a project blog
 
@@ -81,7 +84,7 @@ router.post ('/projects/create',(req, res, next) => {
     Tags.find({_id: {$in: tagsId}}).then(tags => {
         if (tags) {
             console.log(tags)
-            Projects.create({title: title, description: description, blog: blog, tags: tags }, (err, doc) => {
+            Projects.create({title: title, description: description, blog: blog, tags: tags, author:req.user }, (err, doc) => {
                             if(!err) {
             
                                         res.redirect('/projects')

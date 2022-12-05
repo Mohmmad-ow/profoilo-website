@@ -25,6 +25,7 @@ const Tags = mongoose.model('tag', tagsSchema);
 
 // project-blog schema
 const projectsSchema = mongoose.Schema({
+    author: {type: UserSchema},
     title: { type: String, required: true },
     description: { type: String},
     blog: {type: String},

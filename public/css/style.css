@@ -796,6 +796,27 @@ outline:0;
     margin: 0 auto;
     border-radius: 10px;
 }
+/* .name-div {
+    width: 50%;
+}
+
+.name-div, .name-div input,.name-div label {
+    display: inline;
+} */
+
+.first-name {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0% !important;
+}
+.first-name div {
+   width: 40%;
+
+}
+.first-name div input {
+   width: 100%;
+
+}
 
 .register-div input {
     font-family: 'Poppins', sans-serif;
@@ -812,12 +833,14 @@ outline:0;
     font-family: 'Poppins', sans-serif;
     display: block;
     margin-right: 12rem;
+    color: #434242;
     
 }
 .input-label-email {
     font-family: 'Poppins', sans-serif;
     display: block;
-    margin-right: 13.5rem;
+    margin-right: 14.5rem;
+    color: #434242;
 }
 
 .register-button {
@@ -834,4 +857,22 @@ outline:0;
     height: 50px;
     border-radius: 45px;
     border: none;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: #0e5f2a;
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    border-radius: 45px;
+    border: none;
+    cursor: pointer;
 }
