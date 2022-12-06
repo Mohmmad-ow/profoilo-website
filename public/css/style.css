@@ -697,7 +697,7 @@ textarea {
     justify-content: space-around;
     display: grid;
     grid-template-areas:
-        'emptySpace emptySpace date last-updated emptySpace2 emptySpace2'
+        'author author date last-updated emptySpace2 emptySpace2'
         'title title title title description description'
         '. . details details . .';
     gap: 10px;
@@ -707,12 +707,20 @@ textarea {
   /* grid-elements */
 
 .grid-title-blog { grid-area: title;}
-.grid-null-blog { grid-area: emptySpace;  width: 200px;}
-.grid-null2-blog { grid-area: emptySpace2;  width: 200px;}
+.grid-null-blog { grid-area: author;  width: auto;}
 .grid-date-blog { grid-area: date; }
 .grid-last-updated-blog { grid-area: last-updated; }
 .grid-description-blog { grid-area: description; }
 .grid-details-blog { grid-area: details; }
+
+.author {
+    font-size: 1rem;
+}
+
+.author h3 strong {
+    font-family: 'MuseoModerno', cursive;
+
+}
 
 .grid-title-blog h1 {
     font-size: 6rem;
@@ -774,7 +782,7 @@ outline:0;
 }
 .contact-button:hover { background:#5caadd; }
 
-/* User registration */
+/* User registration and login forms */
 
 #register {
     
@@ -796,13 +804,7 @@ outline:0;
     margin: 0 auto;
     border-radius: 10px;
 }
-/* .name-div {
-    width: 50%;
-}
 
-.name-div, .name-div input,.name-div label {
-    display: inline;
-} */
 
 .first-name {
     display: flex;
@@ -875,4 +877,54 @@ outline:0;
     border-radius: 45px;
     border: none;
     cursor: pointer;
+}
+
+/* Login success page redirect */
+
+.login-success {
+    height: 70vh;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.login-success div {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: #a5ddbb;
+    padding: 10px;
+}
+
+.login-success div a  {
+    text-decoration: none;
+    color: #4ccef3;
+    font-size: 2rem;
+}
+.login-success div h1 {
+    font-family: 'MuseoModerno', cursive;
+    color: #ffffff;
+}
+
+/* Login failure */
+/* 
+.login-f-parent {
+    
+} */
+
+.login-failure {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    width: 80%;
+    background-color: #ef5151;
+    text-align: center;
+
+}
+
+.login-failure h1 {
+    color: #fff;
+    font-family: 'MuseoModerno', cursive;
+    padding: 2rem;
 }

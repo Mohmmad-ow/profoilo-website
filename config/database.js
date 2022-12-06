@@ -10,6 +10,8 @@ const UserSchema = mongoose.Schema({
     lastName: String,
     date: { type: Date, required: true, default: Date() },
     updateDate: {type: Date, default: Date()},
+    isAdmin: {type: Boolean, default: false},
+    isBlogger: {type: Boolean, default: true}
 
 })
 

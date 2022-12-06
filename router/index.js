@@ -32,8 +32,8 @@ router.post('/register', (req, res, next) => {
     const saltHash = genPassword(password);
     const salt = saltHash.salt;
     const hash = saltHash.hash;
-    const firstName = req.body.firstn
-    const lastName = req.body.lastn
+    const firstName = req.body.firstName
+    const lastName = req.body.lastName
     console.log(salt, hash)
     User.create({email: email, salt: salt, hash: hash, firstName: firstName, lastName: lastName}).then(user => {
         if (!user) {
@@ -41,7 +41,8 @@ router.post('/register', (req, res, next) => {
         } else {
             console.log(`Email: ${user.email}
             salt: ${user.salt}
-            hash: ${user.hash}`)
+            hash: ${user.hash}
+            Username: ${user.firstName + " " + user.lastName}`)
             res.redirect('login')
         }
     })
@@ -56,10 +57,10 @@ router.get('/login', (req, res, next) => {
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: '/login-success' }));
 
 router.get('/login-success', (req, res, next) => {
-    res.send('<h1>Logged In successfully</h1>')
+    res.render('login-success.ejs', {user: req.user})
 })
 router.get('/login-failure', (req, res, next) => {
-    res.send('<h1>Logged In Unsuccessfully</h1>')
+    res.render('login-failure.ejs')
 })
 // make a project blog
 
@@ -71,10 +72,8 @@ router.get('/projects/create',(req, res, next) => {
         }
     })
 });
-// fixed this 
-/* problem was you needed to make to DB reqs one to create the post and one to update it and now with using the then() promis
-  metod i don't need to do that
-*/
+
+
 router.post ('/projects/create',(req, res, next) => {
     const title = req.body.title;
     const description = req.body.description;
@@ -117,6 +116,17 @@ router.get('/projects', (req, res, next) => {
         }
     })
 });
+
+// view projects by user
+// TODO make a proper page for this
+router.get('/user/projects', (req, res, next) => {
+    Projects.find({author: req.user}).then(prj => {
+        if (prj) {
+            res.send(prj)
+        }
+    })
+    .catch(err => console.log(err))
+})
 
 // view the project by id
 

@@ -4,7 +4,11 @@
     
 </div>
 <div class="blog-div grid-container-blog">
-    <div class="grid-null-blog"></div>
+    <div class="grid-null-blog">
+        <div class="author">
+            <h3>Created by: <strong><%= project.author.firstName %> <%= project.author.lastName %> </strong></h3>
+        </div>
+    </div>
     <div class="grid-date-blog">
     <small class="date">Created: <%= project.date.toLocaleDateString(undefined, options) %></small>
     </div>
