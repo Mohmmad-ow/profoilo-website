@@ -10,7 +10,7 @@ require("dotenv").config();
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
 
-// User auht with passport
+// User auth with passport
 const passport = require('passport')
 const passportLocal = require('passport-local')
 
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
 // Using the routes from the routes js file
-const router = require('./router/index.js')
+const {router, checkMiddleWare} = require('./router/index.js')
 
 // Database config
 const DB_STRING = process.env.DB_STRING_DEV;
@@ -56,7 +56,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-
+app.use(checkMiddleWare)
 // Running server
 app.use('/' , router);
 

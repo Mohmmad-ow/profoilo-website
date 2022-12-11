@@ -2,9 +2,21 @@ const router = require('express').Router();
 const passport = require('passport');
 const {User, Projects, Tags} = require('../config/database');
 const {genPassword} = require('../Utils/passwordVaild')
-
+const {isAuth, isAdmin} = require('./authMiddleware')
 // options for how to view time
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' , hour: 'numeric', minute: 'numeric'};
+
+function checkMiddleWare(req, res, next) {
+    if (req.isAuthenticated() && req.user.isAdmin) {
+        console.log("You are an Admin")
+        
+    } else if(req.isAuthenticated()) {
+        console.log("You are a registered User")
+    } else {
+        console.log("You are not registered")
+    }
+    next()
+}
 
 
 router.get("/", (req, res,next) => {
@@ -63,6 +75,15 @@ router.get('/login-failure', (req, res, next) => {
     res.render('login-failure.ejs')
 })
 // make a project blog
+
+router.get('/logout', (req, res, next) => {
+    req.logOut(err => {
+        if (err) {
+            console.log(err)
+        }
+    })
+    res.redirect('/')
+})
 
 router.get('/projects/create',(req, res, next) => {
     
@@ -276,4 +297,4 @@ router.post('/tags/:id/delete', (req, res, next) => {
     })
 });
 
-module.exports = router
+module.exports = {router, checkMiddleWare}
