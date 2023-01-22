@@ -16,10 +16,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
 // Database config
-const secretKeys = process.env.MONGODB_AUTH;
+const mongoString = process.env.MONGODB_AUTH_STRING;
 
 
-mongoose.connect("mongodb+srv://mohmmad:Moemessi10@portfolio.j0wd0a8.mongodb.net/?retryWrites=true&w=majority");
+mongoose.connect(mongoString);
 
 
 // Tags schema
